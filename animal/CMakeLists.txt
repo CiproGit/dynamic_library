@@ -9,10 +9,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(include)
 
 file(GLOB SOURCES src/*.cpp)
+file(GLOB HEADERS include/*.h)
 
 include(GenerateExportHeader)
 
-add_library(animal SHARED ${SOURCES})
+add_library(animal SHARED ${SOURCES} ${HEADERS})
 
 GENERATE_EXPORT_HEADER (animal
     BASE_NAME animal
